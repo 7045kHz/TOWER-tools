@@ -3,6 +3,21 @@ Basic Ansible Tower (awx) toolkit for CLI based job monitoring, and running.
 
 This is a work in progress with the code in the beginning stages. 
 
+## Goals
+Make a CLI for Ansible Tower that is simple to edit and customize. 
+
+## Dependencies
+Python3 (Tested 3.6.8) on RHEL7 and RHEL8
+
+Modules Loaded for most python scripts.
+```
+import os
+import json
+import requests
+from requests.auth import HTTPBasicAuth
+import argparse
+```
+
 ## Setup Environmental Variables
 Replace values with those of your environment and source file.
 
