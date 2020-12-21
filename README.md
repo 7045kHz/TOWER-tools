@@ -35,31 +35,27 @@ Currently none - planning on allowing drilldown by organization.
 ## Monitor Job
 Displays the standard output of a Job.
 ```
-$  ./monitor.py -j 3011
-Identity added: /tmp/awx_3011_odke14c3/artifacts/3011/ssh_key_data (ansible@tower.example.com)
+$ ./monitor.py -j 3046
+Identity added: /tmp/awx_3047__xsaymgx/artifacts/3047/ssh_key_data (ansible@tower.example.com)
 SSH password: 
 
-PLAY [Create User John Doe] ****************************************************
+PLAY [Hello World!] ************************************************************
 
 TASK [Gathering Facts] *********************************************************
-[WARNING]: Platform linux on host ns1.rsyslab.com is using the discovered
+[WARNING]: Platform linux on host host1.example.com is using the discovered
 Python interpreter at /usr/bin/python, but future installation of another
 Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/
 reference_appendices/interpreter_discovery.html for more information.
-ok: [ns1.rsyslab.com]
-ok: [api.rsyslab.com]
+ok: [host1.example.com]
+ok: [host2.example.com]
 
-TASK [Ensure group "johndoe" exists] *******************************************
-ok: [ns1.rsyslab.com]
-ok: [api.rsyslab.com]
-
-TASK [Add the user 'johndoe' with a bash shell, appending the group 'johndoe' to the user's groups] ***
-ok: [ns1.rsyslab.com]
-ok: [api.rsyslab.com]
+TASK [Hello World!] ************************************************************
+changed: [host1.example.com]
+changed: [host2.example.com]
 
 PLAY RECAP *********************************************************************
-api.rsyslab.com            : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-ns1.rsyslab.com            : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host1.example.com            : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host2.example.com            : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 $
 
 ```
@@ -185,7 +181,7 @@ SSH password:
 PLAY [Hello World!] ************************************************************
 
 TASK [Gathering Facts] *********************************************************
-[WARNING]: Platform linux on host ns1.example.com is using the discovered
+[WARNING]: Platform linux on host host1.example.com is using the discovered
 Python interpreter at /usr/bin/python, but future installation of another
 Python interpreter could change this. See https://docs.ansible.com/ansible/2.9/
 reference_appendices/interpreter_discovery.html for more information.
