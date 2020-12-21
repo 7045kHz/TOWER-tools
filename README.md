@@ -1,6 +1,8 @@
 # TOWER-tools
 Basic toolkit for CLI based job monitoring, and running.
 
+This is a work in progress with the code in the beginning stages. 
+
 ## Setup Environmental Variables
 Replace values with those of your environment and source file.
 
