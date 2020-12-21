@@ -24,34 +24,7 @@ $ ./list-jobs.py
 ========== ============================== ============================== ==============================           ====================
       3042                     commandRun                 commandRun.yml    2020-12-20T23:22:34.051541Z                     successful
       3041                     commandRun                 commandRun.yml    2020-12-20T23:22:09.115032Z                     successful
-      3040                     commandRun                 commandRun.yml    2020-12-20T23:21:49.879702Z                     successful
-      3039                     commandRun                 commandRun.yml    2020-12-20T23:21:23.029496Z                     successful
-      3038                     commandRun                 commandRun.yml    2020-12-20T23:19:46.900897Z                     successful
-      3037                     commandRun                 commandRun.yml    2020-12-20T23:18:52.480012Z                     successful
-      3036                     commandRun                 commandRun.yml    2020-12-20T23:18:18.624593Z                     successful
-      3035                     commandRun                 commandRun.yml    2020-12-20T22:38:39.399414Z                     successful
-      3034                     commandRun                 commandRun.yml    2020-12-20T22:37:59.318791Z                     successful
-      3032                     commandRun                 commandRun.yml    2020-12-20T20:01:55.706955Z                     successful
-      3031                     commandRun                 commandRun.yml    2020-12-20T20:00:17.212028Z                         failed
-      3030                     commandRun                 commandRun.yml    2020-12-20T19:59:43.255582Z                     successful
-      3029                     commandRun                 commandRun.yml    2020-12-20T19:58:10.753588Z                         failed
-      3027                     commandRun                 commandRun.yml    2020-12-20T19:50:23.354557Z                         failed
-      3026                     commandRun                 commandRun.yml    2020-12-20T19:45:16.212146Z                         failed
-      3025                     commandRun                 commandRun.yml    2020-12-20T19:44:32.523314Z                         failed
-      3017                 add_basic_user             add_basic_user.yml    2020-12-18T17:06:44.789773Z                         failed
-      3016                     commandRun                 commandRun.yml    2020-12-18T17:03:48.342083Z                         failed
-      3015                     commandRun                 commandRun.yml    2020-12-18T17:02:46.146900Z                         failed
-      3013                    Hello World                hello-world.yml    2020-12-18T16:51:37.465091Z                     successful
-      3012                       Fdisk -l                      fdisk.yml    2020-12-18T16:51:10.475653Z                         failed
-      3011         Add_Basic_JohnDoe_User     add_basic_johndoe_user.yml    2020-12-18T16:49:38.568190Z                     successful
-      3010         Add_Basic_JohnDoe_User     add_basic_johndoe_user.yml    2020-12-18T16:49:04.664066Z                     successful
-      2926                       cat_file                   cat_file.yml    2020-11-22T00:46:38.274413Z                     successful
-      2922                       cat_file                   cat_file.yml    2020-11-22T00:23:46.276901Z                     successful
-      2920                       cat_file                   cat_file.yml    2020-11-22T00:20:16.529074Z                         failed
-      2918                       cat_file                   cat_file.yml    2020-11-22T00:16:42.761093Z                     successful
-      2917                       cat_file                   cat_file.yml    2020-11-22T00:14:10.613367Z                         failed
-      2916                 add_basic_user             add_basic_user.yml    2020-11-22T00:12:46.363368Z                     successful
-      2915                       cat_file                   cat_file.yml    2020-11-22T00:11:54.339425Z                         failed
+[-cut-]
 
 ```
 ### List Jobs Help
@@ -162,6 +135,7 @@ optional arguments:
 
 Create JSON for adding Survey Answers, identifying Inventories, template and adding extra_vars values to a template.
 ```
+$  ./list-inventories.py
 Inventory ID                           Name Orgainization
 ============ ==============================   ========
          1                 Demo Inventory          1
