@@ -123,6 +123,7 @@ Currently none - planning on allowing drilldown by organization.
 
 ## Start Template
 ```
+$ ./start-template.py -t 13 -f template.json 
 ```
 ### Start Template Help
 Generic Help
