@@ -6,18 +6,18 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 
-USER=os.environ.get("TOWER_USER")
-PASSWORD=os.environ.get("TOWER_PASSWORD")
+USER=os.environ.get("TOWER_USER","")
+PASSWORD=os.environ.get("TOWER_PASSWORD","")
 TOWER_PAGE_SIZE=int(os.environ.get("TOWER_PAGE_SIZE",10))
-TOWER=os.environ.get("TOWER_HOST")
-TOWER_TEMP_DIR=os.environ.get("TOWER_TEMP_DIR")
+TOWER=os.environ.get("TOWER_HOST","")
+TOWER_TEMP_DIR=os.environ.get("TOWER_TEMP_DIR","")
 if len(TOWER)  < 1 or len(USER)  < 1 or len(PASSWORD)<8:
   print("")
   print("Exiting - User Must Setup Environmental Variables first")
   print("")
   print("Example File: cat $HOME/.ansible")
   print("")
-  print("  export TOWER_HOST=https://registry.rsyslab.com")
+  print("  export TOWER_HOST=https://tower.example.com")
   print("  export TOWER_USER=your_account")
   print("  export TOWER_PASSWORD=your_password")
   print("  export TOWER_TEMP_DIR=$HOME/.tower")
