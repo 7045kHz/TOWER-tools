@@ -4,6 +4,8 @@ import os
 import json
 import requests
 from requests.auth import HTTPBasicAuth
+import urllib3
+urllib3.disable_warnings()
 
 
 USER=os.environ.get("TOWER_USER","")
@@ -34,7 +36,7 @@ jobs_temp_file = "{}/jobs.json".format(TOWER_TEMP_DIR)
 if os.path.exists(jobs_temp_file):
   os.remove(jobs_temp_file)
 
-r=requests.post("{}/api/v2/jobs?order_by=-started&page_size={}".format(TOWER,TOWER_PAGE_SIZE), auth=HTTPBasicAuth(USER, PASSWORD))
+r=requests.post("{}/api/v2/jobs?order_by=-started&page_size={}".format(TOWER,TOWER_PAGE_SIZE), auth=HTTPBasicAuth(USER, PASSWORD),verify=False)
 h=r.text
 
 j=open(jobs_temp_file,'w')

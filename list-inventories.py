@@ -4,6 +4,8 @@ import os
 import json
 import requests
 from requests.auth import HTTPBasicAuth
+import urllib3
+urllib3.disable_warnings()
 
 
 USER=os.environ.get("TOWER_USER","")
@@ -34,7 +36,7 @@ inventories_temp_file = "{}/inventories.json".format(TOWER_TEMP_DIR)
 if os.path.exists(inventories_temp_file):
   os.remove(inventories_temp_file)
 
-r=requests.post("{}/api/v2/inventories?order_by=id&page_size={}".format(TOWER,TOWER_PAGE_SIZE), auth=HTTPBasicAuth(USER, PASSWORD))
+r=requests.post("{}/api/v2/inventories?order_by=id&page_size={}".format(TOWER,TOWER_PAGE_SIZE), auth=HTTPBasicAuth(USER, PASSWORD),verify=False)
 h=r.text
 
 

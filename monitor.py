@@ -5,6 +5,8 @@ import json
 import requests
 from requests.auth import HTTPBasicAuth
 import argparse
+import urllib3
+urllib3.disable_warnings()
 
 # Define the program description
 desc = 'monitor.py monitors the stdout output from Ansible Tower Jobs.'
@@ -48,7 +50,7 @@ json_job_file='example.json'
 
 headers={'Content-Type':'application/json'}
 if os.path.exists(json_job_file):
-  r=requests.get("{}/api/v2/jobs/{}/stdout/?format=ansi".format(TOWER,JOB_ID), auth=HTTPBasicAuth(USER, PASSWORD),headers=headers)
+  r=requests.get("{}/api/v2/jobs/{}/stdout/?format=ansi".format(TOWER,JOB_ID), auth=HTTPBasicAuth(USER, PASSWORD),headers=headers,verify=False)
   print(r.text)
 
 

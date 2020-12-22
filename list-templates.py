@@ -4,6 +4,8 @@ import os
 import json
 import requests
 from requests.auth import HTTPBasicAuth
+import urllib3
+urllib3.disable_warnings()
 
 USER=os.environ.get("TOWER_USER","")
 PASSWORD=os.environ.get("TOWER_PASSWORD","")
@@ -34,7 +36,7 @@ if os.path.exists(templates_temp_file):
   os.remove(templates_temp_file)
 
 
-r=requests.post("{}/api/v2/job_templates?order_by=-created&page_size={}".format(TOWER,TOWER_PAGE_SIZE), auth=HTTPBasicAuth(USER, PASSWORD))
+r=requests.post("{}/api/v2/job_templates?order_by=-created&page_size={}".format(TOWER,TOWER_PAGE_SIZE), auth=HTTPBasicAuth(USER, PASSWORD),verify=False)
 h=r.text
 
 

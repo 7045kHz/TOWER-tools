@@ -5,6 +5,8 @@ import json
 import requests
 from requests.auth import HTTPBasicAuth
 import argparse
+import urllib3
+urllib3.disable_warnings()
 
 # Define the program description
 desc = 'start-template.py starts an Asible Tower Job through the commandRun.yml template.'
@@ -69,7 +71,7 @@ if len(TOWER)  < 1 or len(USER)  < 1 or len(PASSWORD)<8:
 
 headers={'Content-Type':'application/json'}
 if os.path.exists(json_job_file):
-  r=requests.post("{}/api/v2/job_templates/{}/launch/".format(TOWER,TEMPLATE_ID), data=open(json_job_file,'rb'),auth=HTTPBasicAuth(USER, PASSWORD),headers=headers)
+  r=requests.post("{}/api/v2/job_templates/{}/launch/".format(TOWER,TEMPLATE_ID), data=open(json_job_file,'rb'),auth=HTTPBasicAuth(USER, PASSWORD),headers=headers,verify=False)
 
 if r.status_code == 201:
   print("Job Started Successfully")
